@@ -87,3 +87,53 @@ Skasować wszystkie dokumenty z kolekcji "inventory" jednym poleceniem, sprawdzi
 { _id:4, item: "planner", status: "D", size: { h: 22.85, w: 30, uom: "cm" }, instock: [ { warehouse: "A", qty: 40 } ] }
 { _id:5, item: "postcard", status: "A", size: { h: 10, w: 15.25, uom: "cm" }, instock: [ { warehouse: "B", qty: 15 }, { warehouse: "C", qty: 35 } ] }
 ```
+
+## Część 3 (wyszukiwanie)
+Polecenie `find()`
+```
+db.<kolekcja>.find({<warunki>})
+db.<kolekcja>.find({}, {<projekcja>})
+db.<kolekcja>.find({<warunki>}, {<projekcja>})
+// db.users.find({name: "Frodo"})
+// db.users.find({},{"address":1}) - include
+// db.users.find({},{"address":0}) - exclude 
+```
+
+#### Zadanie 9
+Wyświetlić elementy o statusie "A". 
+
+Wyświetlić elementy znajdujące się w magazynie "A".
+
+#### Zadanie 10 
+Operatory `$and, $or, $in`.
+
+Wyświetlić elementy o statusie "A" znajdujące się w magazynie "A".
+
+Wyświetlić elementy o _id: 1, 2, 3.
+
+Wyświetlić elementy o statusie "D" oraz elementy z magazynu "B".
+
+#### Zadanie 11
+Wyświetlić wszystkie elementy, ale tylko pola "_id", "item" i "status".
+
+Wyświetlić elementy o statusie "D", ale tylko pola "_id", "item" i "status".
+
+Wyświetlić elementy o statusie "D", ale tylko pola "item" i "status" (ukryć "_id")
+
+Wyświetlić elementy o statusie "A", wszystkie pola bez pól "size" oraz "_id".
+
+#### Zadanie 12
+https://docs.mongodb.com/manual/reference/operator/query-comparison/
+
+Wyświetlić elementy, które mają wysokość (h) nie większą niż 10.
+
+Wyświetlić elementy, które mają wysokość (h) nie większą niż 10 i miarą są centymetry.
+
+Wyświetlić elementy, które mają wysokość (h) nie większą niż 10 i miarą są centymetry, na wyjściu tylko "name" i "size".
+
+#### Zadanie 13
+https://docs.mongodb.com/manual/reference/operator/query/regex/
+
+Wyświetlić elementy zawierające w nazwie literę p.
+
+Wyświetlić nazwę i status elementów kończących się na "er".
