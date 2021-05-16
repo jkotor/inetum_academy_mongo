@@ -17,7 +17,7 @@ MongoDB z oficjalnej strony (https://docs.mongodb.com/guides/server/install/), d
 
 ### Warto zainstalować:
 Dowolne IDE do MongoDB
-* preferowany Robo 3T (będzie pokazywany) - https://robomongo.org/download - wystarczy Robo 3T, bez 3T Studio
+* preferowany Robo 3T (będzie pokazywany) - https://robomongo.org/download - wystarczy Robo 3T, bez Studio 3T
 * Atlas Mongo z oficjalnej strony mongoDB (na własną rękę)
 * inne
 
@@ -38,7 +38,8 @@ W przypadku, gdy ktoś nie będzie w stanie uruchomić lokalnie mongo, można sk
 ## Plan warsztatu
 1. Krótkie wprowadzenie (noSQL, bazy dokumentowe, kolekcje i dokumenty, podobieństwa i różnice z SQL)
 2. Zadania praktyczne
-   * bazy danych i kolekcje (dodawanie, usuwanie)
+   * bazy danych i kolekcje (dodawanie, usuwanie, listowanie)
    * dokumenty w kolekcjach, CRUD (Create, Read, Update, Delete)
    * wyszukiwanie dokumentów, podstawy (jak SELECT w SQL) 
-3. Krótkie Q&A  
+3. Podsumowanie   
+4. Krótkie Q&A  
