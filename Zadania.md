@@ -137,3 +137,27 @@ https://docs.mongodb.com/manual/reference/operator/query/regex/
 Wyświetlić elementy zawierające w nazwie literę p.
 
 Wyświetlić nazwę i status elementów kończących się na "er".
+
+## Część 4 (paging i sorting)
+Polecenia:
+```
+limit()
+skip()
+sort()
+// db.users.find().skip(2).limit(3).sort({name:-1})
+
+```
+#### Zadanie 14
+Uruchomić poniższą komendę i przeanalizować wynik
+```
+for (var i = 10; i < 40; i++) { db.data.insert({type: "dana liczbowa", name: "numer_"+i, count: i%8+2})}
+```
+
+#### Zadanie 15
+Wyświetlić tylko 8 elementów z kolekcji "data".
+
+Wyświetlić drugie 8 elementów.
+
+Wyświetlić drugie 8 elementów posortowane malejąco po "name".
+
+Wyświetlić elementy z "name" w trzeciej dziesiątce (numer_30 .. numer_39) posortowane malejąco po "count", nie iteresują nas pola "type" oraz "_id".
