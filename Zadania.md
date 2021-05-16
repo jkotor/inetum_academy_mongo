@@ -30,3 +30,60 @@ Sprawdzić statystyki.
 Utworzyć bazę danych o nazwie "myshop" (lub wybrać inną nazwę). Wejść do bazy danych i utworzyć w niej kolekcję "testowa". Sprawdzić, że kolekcja istnieje.
 
 Usunąć kolekcję "testowa" i sprawdzić, że nie istnieje.
+
+## Część 2 (CRUD na dokumentach)
+Polecenia
+```
+db.<kolekcja>.find()
+// db.users.find()
+db.<kolekcja>.insert()
+// db.users.insert({_id:1, name: "Frodo Baggins"})
+db.<kolekcja>.update()
+// db.users.update({_id:1}, {name: "Smeagol"})
+// operators: $set, $unset
+db.<kolekcja>.remove()
+// db.users.remove({_id:1})
+```
+
+Elementy testowe do bazy danych:
+```
+{ "_id":1, "item": "journal", "qty": 25, "size": { "h": 14, "w": 21, "uom": "cm" }, "status": "A" }
+{ "_id":2, "item": "notebook", "qty": 50, "size": { "h": 8.5, "w": 11, "uom": "in" }, "status": "A" }
+{ "_id":3, "item": "paper", "qty": 100, "size": { "h": 8.5, "w": 11, "uom": "in" }, "status": "D" }
+{ "_id":4, "item": "planner", "qty": 75, "size": { "h": 22.85, "w": 30, "uom": "cm" }, "status": "D" }
+{ "_id":5, "item": "postcard", "qty": 45, "size": { "h": 10, "w": 15.25, "uom": "cm" }, "status": "A" }
+```
+qty - quantity, h - height, w - width, uom - Units of measurement
+
+#### Zadanie 3
+W bazie "myshop" wstawić do nowej kolekcji "inventory" trzy elementy z powyższej listy o identyfikatorach 1, 2, 3. Wyświetlić zawartość kolekcji.
+
+Używając polecenia `insertMany()` wstawić dokumenty o identyfikatorach 4 i 5.
+
+#### Zadanie 4
+Spróbować wstawić dokument "planner2" o tym samym identyfikatorze co "planner". 
+
+Usunąć dokument "planner" i wstawić w jego miejsce "planner2". 
+
+#### Zadanie 5
+Wstawić nowy dokument do kolekcji bez podawania identyfikatora. (Co się stało?)
+Usunąć nowo dodany dokument.
+
+#### Zadanie 6
+Zmienić status dokumentu "paper" na "B". Sprawdzić wynik zmiany. (Co się stało?)
+
+#### Zadanie 7
+Dodać elementom 1, 2, 3 parametr określający ich wagę (weight) z dowolnymi wartościami. 
+
+Usunąć paramert z wagą z dokumentu 3.
+
+#### Zadanie 8
+Skasować wszystkie dokumenty z kolekcji "inventory" jednym poleceniem, sprawdzić wynik. Ponownie wstawić wszystkie 5 dokumentów z następującymi wartościami:
+
+```
+{ _id:1, item: "journal", status: "A", size: { h: 14, w: 21, uom: "cm" }, instock: [ { warehouse: "A", qty: 5 } ] }
+{ _id:2, item: "notebook", status: "A",  size: { h: 8.5, w: 11, uom: "in" }, instock: [ { warehouse: "C", qty: 5 } ] }
+{ _id:3, item: "paper", status: "D", size: { h: 8.5, w: 11, uom: "in" }, instock: [ { warehouse: "A", qty: 60 } ] }
+{ _id:4, item: "planner", status: "D", size: { h: 22.85, w: 30, uom: "cm" }, instock: [ { warehouse: "A", qty: 40 } ] }
+{ _id:5, item: "postcard", status: "A", size: { h: 10, w: 15.25, uom: "cm" }, instock: [ { warehouse: "B", qty: 15 }, { warehouse: "C", qty: 35 } ] }
+```
