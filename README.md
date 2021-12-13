@@ -42,4 +42,4 @@ W przypadku, gdy ktoś nie będzie w stanie uruchomić lokalnie mongo, można sk
    * dokumenty w kolekcjach, CRUD (Create, Read, Update, Delete)
    * wyszukiwanie dokumentów, podstawy (jak SELECT w SQL) 
 3. Podsumowanie   
-4. Krótkie Q&A  
+4. Krótkie Q&A.  
